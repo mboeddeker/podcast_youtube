@@ -8,4 +8,3 @@ main() async {
   var hotReloader = HotReloader(app.createServer, [new Directory('bin/app')]);
   await hotReloader.startServer('localhost', 3000);
 }
-
