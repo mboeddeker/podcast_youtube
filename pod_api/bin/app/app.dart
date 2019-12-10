@@ -8,6 +8,7 @@ class App {
     final router = AppRouter();
 
     router.addBasicRoutes(_app);
+    router.connectTopListRoutesWith(_app);
 
     return _app;
   }
