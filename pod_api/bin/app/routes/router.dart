@@ -1,11 +1,12 @@
 import 'package:angel_framework/angel_framework.dart';
 
 import '../controller/toplist_controller.dart';
-import '../services/itunes_toplist_service.dart';
+import '../services/itunes_service.dart';
+
 
 class AppRouter {
 
-  ToplistController toplistController = ToplistController(ItunesTopListService());
+  ToplistController toplistController = ToplistController(ItunesService());
 
 
   addBasicRoutes(Angel app) {

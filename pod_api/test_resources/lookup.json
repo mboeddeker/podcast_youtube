@@ -1,0 +1,41 @@
+{
+  "resultCount": 1,
+  "results": [
+    {
+      "wrapperType": "track",
+      "kind": "podcast",
+      "artistId": 1324111683,
+      "collectionId": 1374777077,
+      "trackId": 1374777077,
+      "artistName": "ZEIT ONLINE",
+      "collectionName": "Verbrechen",
+      "trackName": "Verbrechen",
+      "collectionCensoredName": "Verbrechen",
+      "trackCensoredName": "Verbrechen",
+      "artistViewUrl": "https://podcasts.apple.com/us/artist/zeit-online/1324111683?uo=4",
+      "collectionViewUrl": "https://podcasts.apple.com/us/podcast/verbrechen/id1374777077?uo=4",
+      "feedUrl": "https://verbrechen.podigee.io/feed/mp3",
+      "trackViewUrl": "https://podcasts.apple.com/us/podcast/verbrechen/id1374777077?uo=4",
+      "artworkUrl30": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/71/4f/1b/714f1ba2-e994-31ae-b1e6-d3a129b4775c/mza_1497713173372436138.png/30x30bb.jpg",
+      "artworkUrl60": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/71/4f/1b/714f1ba2-e994-31ae-b1e6-d3a129b4775c/mza_1497713173372436138.png/60x60bb.jpg",
+      "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/71/4f/1b/714f1ba2-e994-31ae-b1e6-d3a129b4775c/mza_1497713173372436138.png/100x100bb.jpg",
+      "collectionPrice": 0,
+      "trackPrice": 0,
+      "trackRentalPrice": 0,
+      "collectionHdPrice": 0,
+      "trackHdPrice": 0,
+      "trackHdRentalPrice": 0,
+      "releaseDate": "2019-12-03T12:30:00Z",
+      "collectionExplicitness": "cleaned",
+      "trackExplicitness": "cleaned",
+      "trackCount": 43,
+      "country": "USA",
+      "currency": "USD",
+      "primaryGenreName": "Society & Culture",
+      "contentAdvisoryRating": "Clean",
+      "artworkUrl600": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/71/4f/1b/714f1ba2-e994-31ae-b1e6-d3a129b4775c/mza_1497713173372436138.png/600x600bb.jpg",
+      "genreIds": ["1324", "26"],
+      "genres": ["Society & Culture", "Podcasts"]
+    }
+  ]
+}

@@ -9,12 +9,13 @@ class ChartItem {
   final String releaseDate;
   final String category;
 
-  ChartItem(
-      {@required this.id,
-      @required this.title,
-      @required this.summary,
-      @required this.artist,
-      @required this.thumbnail,
-      @required this.releaseDate,
-      @required this.category});
+  ChartItem({
+    @required this.id,
+    @required this.title,
+    @required this.summary,
+    @required this.artist,
+    @required this.thumbnail,
+    @required this.releaseDate,
+    @required this.category,
+  });
 }
