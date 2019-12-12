@@ -23,7 +23,7 @@ void main() {
     expect(entries.length, isNot(0));
 
     var chartItems = entries
-        .map<ChartItem>((element) => ChartItem.fromXml(element))
+        .map<ChartItem>((element) => ChartItemMapper.fromXml(element))
         .toList();
 
     var firstItem = chartItems.first;
@@ -45,7 +45,7 @@ void main() {
     final File file = File('test_resources/charts.xml');
     final String xmlString = await file.readAsString();
 
-    final sut = ChartsResponse(xmlString: xmlString);
+    final sut = ChartsResponseMapper.fromXML(xmlString);
     expect(sut.entries.length, isNot(0));
     expect(sut.entries.first.title,
         equals('Unter Pfarrerstöchtern - ZEIT ONLINE'));

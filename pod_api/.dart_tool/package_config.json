@@ -62,6 +62,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "angel_static",
+      "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/angel_static-2.1.3+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "angel_websocket",
       "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/angel_websocket-2.0.3",
       "packageUri": "lib/",
@@ -344,6 +350,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "range_header",
+      "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/range_header-2.0.2+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "recase",
       "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/recase-2.0.1",
       "packageUri": "lib/",
@@ -494,7 +506,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2019-12-11T13:45:33.282832Z",
+  "generated": "2019-12-12T13:33:55.111339Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }
