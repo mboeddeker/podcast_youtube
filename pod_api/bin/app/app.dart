@@ -1,11 +1,12 @@
 import 'package:angel_framework/angel_framework.dart';
 import 'package:logging/logging.dart';
 import 'routes/router.dart';
+import 'services/itunes_service.dart';
 
 class App {
   Future<Angel> createServer() async {
     final _app = Angel();
-    final router = AppRouter();
+    final router = AppRouter(ItunesService());
 
     _app.logger = Logger('example')
       ..onRecord.listen((rec) {
@@ -15,7 +16,7 @@ class App {
       });
 
     router.addBasicRoutes(_app);
-    router.connectTopListRoutesWith(_app);
+    router.connectItunesRoutesWith(_app);
 
     return _app;
   }
