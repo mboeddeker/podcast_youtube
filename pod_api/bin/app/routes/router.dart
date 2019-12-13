@@ -12,11 +12,10 @@ class AppRouter {
 
   connectTopListRoutesWith(Angel app) {
     app.get('/charts', toplistController.getPodcastCharts);
-    app.get('/genres', _notImplementedHandler);
+    app.get('/lookup', toplistController.getLookup);
   }
 
-  _notImplementedHandler(
-      RequestContext<dynamic> req, ResponseContext<dynamic> res) {
+  _notImplementedHandler(RequestContext<dynamic> req, ResponseContext<dynamic> res) {
     res.serialize({"error": "Route not implemented"});
   }
 }
