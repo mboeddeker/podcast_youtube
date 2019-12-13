@@ -6,7 +6,7 @@ dependencies:
   dio: ^3.0.7
   intl: any
   xml: ^3.6.1
-
+  webfeed: any
 
 dev_dependencies:
   test: any

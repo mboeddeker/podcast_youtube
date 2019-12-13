@@ -17,7 +17,7 @@ void main() {
   });
 
   test('Parse LookupResponse from Json', () {
-    final response = LookupResponseMapper.fromMap(dto);
+    final response = LookupResponse.fromMap(dto);
     expect(response.resultCount, equals(1));
     expect(response.results.first, isNotNull);
     expect(response.results.first.trackId, equals(1374777077));

@@ -26,11 +26,11 @@ class ToplistController {
   }
 
   Future<void> getLookup(RequestContext req, ResponseContext res) async {
-    final queryParameter = req.queryParameters;
+    final queryParameter = req.params;
     final lookupId = queryParameter['id'];
     if (lookupId == null) throw AngelHttpException.badRequest();
 
-    final lookupData = LookupResponseMapper.fromMap(await service.getLookup(id: lookupId));
+    final lookupData = LookupResponse.fromMap(await service.getLookup(id: lookupId));
     if (lookupData.resultCount == 0) throw AngelHttpException.badRequest();
 
     res.serialize(lookupData.results.first.toMap());

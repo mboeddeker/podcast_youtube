@@ -1,6 +1,5 @@
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
-
 import 'dart:core';
 
 class LookupResponse {
@@ -8,16 +7,13 @@ class LookupResponse {
   final List<LookupResult> results;
 
   LookupResponse({@required this.resultCount, @required this.results});
-}
 
-extension LookupResponseMapper on LookupResponse {
   static LookupResponse fromMap(Map<String, dynamic> map) {
     try {
       return LookupResponse(
         resultCount: map['resultCount'],
-        results: map['results']
-            .map<LookupResult>((element) => LookupResultMapper.fromMap(element))
-            .toList(),
+        results:
+            map['results'].map<LookupResult>((element) => LookupResult.fromMap(element)).toList(),
       );
     } catch (e) {
       return LookupResponse(resultCount: 0, results: List());
@@ -59,9 +55,7 @@ class LookupResult {
     return DateFormat('yyyy-MM-ddThh:mm:ssZ').parse(releaseDate);
     // 2019-12-03T12:30:00Z
   }
-}
 
-extension LookupResultMapper on LookupResult {
   static LookupResult fromMap(Map<String, dynamic> map) {
     try {
       return LookupResult(

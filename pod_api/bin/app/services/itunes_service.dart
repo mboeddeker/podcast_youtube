@@ -25,7 +25,7 @@ class ItunesService extends BaseService {
 
     final xmlResponse = await dio.get<String>(url);
 
-    return ChartsResponseMapper.fromXML(xmlResponse.data).toMap();
+    return ChartsResponse.fromXML(xmlResponse.data).toMap();
   }
 
   Future<Map<String, dynamic>> getLookup({@required String id}) async {

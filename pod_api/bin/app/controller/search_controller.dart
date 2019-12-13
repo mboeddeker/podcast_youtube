@@ -19,7 +19,7 @@ class SearchController {
       explicit: explicit == 'false' ? false : true,
     );
 
-    final searchResponse = LookupResponseMapper.fromMap(searchData);
+    final searchResponse = LookupResponse.fromMap(searchData);
 
     res.serialize(searchResponse.toMap());
   }

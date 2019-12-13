@@ -1,19 +1,19 @@
 import 'package:xml/xml.dart' as xml;
 import 'package:meta/meta.dart';
 
+import 'lookup_item.dart';
+
 class ChartsResponse {
   List<ChartItem> entries;
   ChartsResponse({this.entries});
-}
 
-extension ChartsResponseMapper on ChartsResponse {
   static ChartsResponse fromXML(String xmlString) {
     try {
       final xml.XmlDocument document = xml.parse(xmlString);
 
       var chartItems = document
           .findAllElements("entry")
-          .map<ChartItem>((element) => ChartItemMapper.fromXml(element))
+          .map<ChartItem>((element) => ChartItem.fromXml(element))
           .toList();
 
       return ChartsResponse(entries: chartItems);
@@ -38,6 +38,7 @@ class ChartItem {
   final String thumbnail;
   final String releaseDate;
   final String category;
+  final LookupResult lookup;
 
   ChartItem({
     @required this.id,
@@ -47,10 +48,9 @@ class ChartItem {
     @required this.thumbnail,
     @required this.releaseDate,
     @required this.category,
+    this.lookup,
   });
-}
 
-extension ChartItemMapper on ChartItem {
   static ChartItem fromXml(xml.XmlElement xmlNode) {
     var id = xmlNode.findAllElements('id').single.getAttribute('im:id');
     var title = xmlNode.findAllElements('title').single.text;
@@ -58,8 +58,7 @@ extension ChartItemMapper on ChartItem {
     var artist = xmlNode.findAllElements('im:artist').single.text;
     var thumbnail = xmlNode.findAllElements('im:image').last.text ?? "";
     var releaseDate = xmlNode.findAllElements('im:releaseDate').single.text;
-    var category =
-        xmlNode.findAllElements('category').single.getAttribute('label');
+    var category = xmlNode.findAllElements('category').single.getAttribute('label');
 
     return ChartItem(
         id: id,
@@ -80,6 +79,7 @@ extension ChartItemMapper on ChartItem {
       'thumbnail': this.thumbnail,
       'releaseDate': this.releaseDate,
       'category': this.category,
+      'lookup': this.lookup,
     };
   }
 }

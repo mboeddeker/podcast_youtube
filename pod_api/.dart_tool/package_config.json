@@ -488,6 +488,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "webfeed",
+      "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/webfeed-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///Users/marvinknabe/.pub-cache/hosted/pub.dartlang.org/xml-3.6.1",
       "packageUri": "lib/",
@@ -506,7 +512,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2019-12-13T08:37:23.789051Z",
+  "generated": "2019-12-13T12:11:37.583419Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }
