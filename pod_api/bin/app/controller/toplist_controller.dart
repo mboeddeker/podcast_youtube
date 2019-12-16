@@ -1,6 +1,4 @@
 import 'package:angel_framework/angel_framework.dart';
-
-import '../models/lookup_item.dart';
 import '../services/itunes_service.dart';
 
 class ToplistController {
@@ -22,15 +20,15 @@ class ToplistController {
       genre: genreQuery ?? null,
     );
 
-    res.serialize(chartsResponse);
+    res.serialize(chartsResponse.toMap());
   }
 
   Future<void> getLookup(RequestContext req, ResponseContext res) async {
-    final queryParameter = req.params;
-    final lookupId = queryParameter['id'];
+    final urlParameter = req.params;
+    final lookupId = urlParameter['podcastId'];
     if (lookupId == null) throw AngelHttpException.badRequest();
 
-    final lookupData = LookupResponse.fromMap(await service.getLookup(id: lookupId));
+    final lookupData = await service.getLookup(id: lookupId);
     if (lookupData.resultCount == 0) throw AngelHttpException.badRequest();
 
     res.serialize(lookupData.results.first.toMap());

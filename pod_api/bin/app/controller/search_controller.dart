@@ -12,15 +12,13 @@ class SearchController {
     final String searchTerm = req.params['podcastName'];
     final String explicit = req.queryParameters['explicit'];
 
-    if (searchTerm == null || searchTerm.isEmpty) throw AngelHttpException.badRequest();
+    if (searchTerm == null || searchTerm.isEmpty)
+      throw AngelHttpException.badRequest();
 
-    final Map<String, dynamic> searchData = await service.search(
+    final LookupResponse searchData = await service.search(
       seachTerm: searchTerm,
       explicit: explicit == 'false' ? false : true,
     );
-
-    final searchResponse = LookupResponse.fromMap(searchData);
-
-    res.serialize(searchResponse.toMap());
+    res.serialize(searchData.toMap());
   }
 }

@@ -78,6 +78,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3+2"
+  angel_test:
+    dependency: "direct dev"
+    description:
+      name: angel_test
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
+  angel_validate:
+    dependency: transitive
+    description:
+      name: angel_validate
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   angel_websocket:
     dependency: transitive
     description:

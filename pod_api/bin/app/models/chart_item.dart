@@ -38,7 +38,7 @@ class ChartItem {
   final String thumbnail;
   final String releaseDate;
   final String category;
-  final LookupResult lookup;
+  LookupResult lookup;
 
   ChartItem({
     @required this.id,
@@ -58,7 +58,8 @@ class ChartItem {
     var artist = xmlNode.findAllElements('im:artist').single.text;
     var thumbnail = xmlNode.findAllElements('im:image').last.text ?? "";
     var releaseDate = xmlNode.findAllElements('im:releaseDate').single.text;
-    var category = xmlNode.findAllElements('category').single.getAttribute('label');
+    var category =
+        xmlNode.findAllElements('category').single.getAttribute('label');
 
     return ChartItem(
         id: id,
@@ -79,7 +80,7 @@ class ChartItem {
       'thumbnail': this.thumbnail,
       'releaseDate': this.releaseDate,
       'category': this.category,
-      'lookup': this.lookup,
+      'lookup': this.lookup?.toMap() ?? {},
     };
   }
 }

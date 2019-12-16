@@ -11,3 +11,4 @@ dependencies:
 dev_dependencies:
   test: any
   mockito: any
+  angel_test: ^2.0.1

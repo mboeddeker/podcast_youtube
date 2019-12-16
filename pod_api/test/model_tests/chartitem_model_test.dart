@@ -22,7 +22,9 @@ void main() {
     var entries = document.findAllElements("entry");
     expect(entries.length, isNot(0));
 
-    var chartItems = entries.map<ChartItem>((element) => ChartItem.fromXml(element)).toList();
+    var chartItems = entries
+        .map<ChartItem>((element) => ChartItem.fromXml(element))
+        .toList();
 
     var firstItem = chartItems.first;
 
@@ -33,6 +35,7 @@ void main() {
     expect(firstItem.artist, equals('ZEIT ONLINE'));
     expect(firstItem.releaseDate, equals('2019-12-05T22:30:00-07:00'));
     expect(firstItem.id, equals('1489988353'));
+    expect(firstItem.lookup, isNull);
     expect(
         firstItem.thumbnail,
         equals(
@@ -45,6 +48,7 @@ void main() {
 
     final sut = ChartsResponse.fromXML(xmlString);
     expect(sut.entries.length, isNot(0));
-    expect(sut.entries.first.title, equals('Unter Pfarrerstöchtern - ZEIT ONLINE'));
+    expect(sut.entries.first.title,
+        equals('Unter Pfarrerstöchtern - ZEIT ONLINE'));
   });
 }
