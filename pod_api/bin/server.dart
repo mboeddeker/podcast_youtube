@@ -7,5 +7,5 @@ main() async {
   final angelInstance = await app.createServer();
 
   var http = AngelHttp(angelInstance);
-  await http.startServer('localhost', 8080);
+  await http.startServer('127.0.0.1', 3000);
 }
