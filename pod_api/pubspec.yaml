@@ -1,4 +1,9 @@
 name: pub_api
 dependencies:
-    angel_framework: ^2.1.0
-    angel_hot: ^2.0.6
+  angel_framework: ^2.1.0
+  angel_static: ^2.0.0
+  angel_hot: ^2.0.6
+  dio: ^3.0.7
+  intl: ^0.16.0
+  xml: ^3.6.1
+  webfeed: ^0.4.2
