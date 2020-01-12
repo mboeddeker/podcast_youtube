@@ -2,9 +2,9 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as express from "express";
 
-import Controller from "./interfaces/controllerInterface";
-import errorMiddleware from "./middleware/errorMiddleware";
-import loggerMiddleware from "./middleware/loggerMiddleware";
+import Controller from "./Interfaces/ControllerInterface";
+import errorMiddleware from "./Middleware/ErrorMiddleware";
+import loggerMiddleware from "./Middleware/LoggerMiddleware";
 
 class App {
   public app: express.Application;
