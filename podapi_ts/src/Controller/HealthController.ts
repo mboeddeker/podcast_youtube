@@ -1,7 +1,7 @@
 import * as express from "express";
-import Controller from "../../Interfaces/ControllerInterface";
+import Controller from "../Interfaces/ControllerInterface";
 
-class HealtController implements Controller {
+class HealthController implements Controller {
   public path = "/health";
   public router = express.Router();
 
@@ -22,4 +22,4 @@ class HealtController implements Controller {
   };
 }
 
-export default HealtController;
+export default HealthController;

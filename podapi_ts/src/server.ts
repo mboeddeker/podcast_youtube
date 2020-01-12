@@ -1,6 +1,6 @@
 import "dotenv/config";
-import App from "./App";
-import HealthController from "./Features/Health/HealthController";
+import App from "./app";
+import HealthController from "./Controller/HealthController";
 
 const app = new App([new HealthController()]);
 
