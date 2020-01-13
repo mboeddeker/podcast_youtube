@@ -1,3 +1,4 @@
+import * as xmlParser from "fast-xml-parser";
 import * as request from "request";
 import ChartsResponse from "../Models/ChartResponse";
 import BaseServie from "./BaseService";
@@ -17,11 +18,13 @@ class ITunesService extends BaseServie {
 
     return new Promise<any>((resolve, reject) => {
       request.get(url, (error, response, body) => {
-        if (error != null) {
-          reject(`error: ${error}`);
-        }
+        if (error != null) reject(`error: ${error}`);
 
-        resolve(body);
+        const jsonFromXml = xmlParser.parse(body, {
+          ignoreAttributes: false,
+          ignoreNameSpace: true
+        });
+        resolve(jsonFromXml);
       });
     });
   }

@@ -1,6 +1,7 @@
 import LookupItem from "./LookupItem";
 
-export default interface LookupResponse {
+// tslint:disable-next-line:interface-name
+export default interface ILookupResponse {
   resultCount: number;
   results: LookupItem[];
 }

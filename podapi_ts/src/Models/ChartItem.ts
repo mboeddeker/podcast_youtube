@@ -1,12 +1,36 @@
-import LookupItem from "./LookupItem";
+import ILookupItem from "./LookupItem";
+import { JsonProperty, JsonIgnore } from "json-object-mapper";
 
-export default interface ChartItem {
+// tslint:disable-next-line:interface-name
+export default interface IChartItem {
   id: string;
   title: string;
   summary: string;
   artist: string;
-  thumbnail: string;
+  thumbnails: string[];
   releaseDate: string;
   category: string;
-  lookup: LookupItem;
+  lookup: ILookupItem;
+}
+
+export class ChartItem implements IChartItem {
+  @JsonProperty({ name: "id" })
+  public id: string;
+
+  @JsonProperty("title")
+  public title: string;
+
+  @JsonProperty("summary")
+  public summary: string;
+
+  @JsonProperty("im:artist")
+  public artist: string;
+
+  @JsonProperty("im:image")
+  public thumbnails: string[];
+
+  @JsonProperty("im:releaseDate")
+  public releaseDate: string;
+  public category: string;
+  public lookup: ILookupItem;
 }

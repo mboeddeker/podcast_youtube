@@ -1,5 +1,6 @@
 import ChartItem from "./ChartItem";
 
-export default interface ChartsResponse {
+// tslint:disable-next-line:interface-name
+export default interface IChartsResponse {
   entries: ChartItem[];
 }
