@@ -13,6 +13,7 @@
     "dotenv": "^6.2.0",
     "envalid": "^4.1.4",
     "express": "^4.16.4",
+    "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "5.4.2",
     "request": "^2.88.0"

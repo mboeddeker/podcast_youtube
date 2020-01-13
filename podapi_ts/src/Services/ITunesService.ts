@@ -1,9 +1,9 @@
-import BaseServie from "./BaseService";
-import ChartsResponse from "Models/ChartResponse";
 import * as request from "request";
+import ChartsResponse from "../Models/ChartResponse";
+import BaseServie from "./BaseService";
 
 class ITunesService extends BaseServie {
-  async getTopPodcasts(
+  public async getTopPodcasts(
     langauge: string = "de",
     limit: number = 30,
     explicit: boolean = true,
@@ -14,15 +14,15 @@ class ITunesService extends BaseServie {
       genre == null
         ? `${this.baseUrl}${langauge}/rss/toppodcasts/limit=${limit}/explicit=${explicit}/xml`
         : `${this.baseUrl}${langauge}/rss/toppodcasts/limit=${limit}/genre=${genre}/explicit=${explicit}/xml`;
-    console.log(url);
-    request.get(url, (error, response, body) => {
-      if (error != null) {
-        return new Promise<ChartsResponse>((resolve, reject) =>
-          reject(`error: ${error}`)
-        );
-      }
 
-      return new Promise<any>((resolve, _) => resolve(body));
+    return new Promise<any>((resolve, reject) => {
+      request.get(url, (error, response, body) => {
+        if (error != null) {
+          reject(`error: ${error}`);
+        }
+
+        resolve(body);
+      });
     });
   }
 }
