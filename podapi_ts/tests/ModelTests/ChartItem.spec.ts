@@ -1,10 +1,10 @@
 import { ObjectMapper } from "json-object-mapper";
 import "reflect-metadata";
+import { isNullOrUndefined } from "util";
 import { ChartItem } from "../../src/Models/ChartItem";
 import FeedResponseDTO from "../../src/Models/DTOs/FeedResponseDTO";
 // @ts-ignore
 import feedJson from "../../testfiles/feed.json";
-import { isNullOrUndefined } from "util";
 
 test("Test correct Mapping from DTO to Model", () => {
   // given
