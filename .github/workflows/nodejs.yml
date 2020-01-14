@@ -19,7 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm install --prefix ./podapi_ts ./podapi_ts
-        npm run test --prefix ./podapi_ts
+        cd ./podapi_ts/
+        npm install
+        npm run test
       env:
         CI: true
