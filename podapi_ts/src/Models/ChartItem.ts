@@ -1,8 +1,7 @@
 import { JsonIgnore, JsonProperty } from "json-object-mapper";
 import StringMap from "../Interfaces/StringMapInterface";
-import ArtistDTO from "./DTOs/ArtistDTO";
 import EntryDTO from "./DTOs/EntryDTO";
-import ILookupItem from "./LookupItem";
+import { ILookupItem } from "./LookupItem";
 import Model from "./Model";
 
 // tslint:disable-next-line:interface-name

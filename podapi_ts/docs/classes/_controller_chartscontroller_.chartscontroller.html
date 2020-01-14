@@ -97,6 +97,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_controller_chartscontroller_.chartscontroller.html#getcharts" class="tsd-kind-icon">get<wbr>Charts</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_controller_chartscontroller_.chartscontroller.html#getlookup" class="tsd-kind-icon">get<wbr>Lookup</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_controller_chartscontroller_.chartscontroller.html#lookuppath" class="tsd-kind-icon">lookup<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_controller_chartscontroller_.chartscontroller.html#path" class="tsd-kind-icon">path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_controller_chartscontroller_.chartscontroller.html#router" class="tsd-kind-icon">router</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_controller_chartscontroller_.chartscontroller.html#service" class="tsd-kind-icon">service</a></li>
@@ -123,7 +125,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L10">src/Controller/ChartsController.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L12">src/Controller/ChartsController.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -145,7 +147,27 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Charts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RequestHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ParamsDictionary</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;asyncHandler(async (req: Request, res: Response, next: NextFunction) &#x3D;&gt; {const language: string &#x3D; req.query.language;const limit: number &#x3D; Number(req.query.limit);const explicit: boolean &#x3D; Boolean(req.query.explicit);const genre: string &#x3D; req.query.genre;const withLookup: boolean &#x3D; Boolean(req.query.withLookup);try {const chartsResponse: ChartResponse &#x3D; await this.service.getTopPodcasts(language,limit,explicit,genre,withLookup);res.send(chartsResponse.toJson());} catch (error) {res.status(500).send(&#x60;Error with ChartsResponse: ${error}&#x60;);}})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L21">src/Controller/ChartsController.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L24">src/Controller/ChartsController.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="getlookup" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Lookup</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Lookup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RequestHandler</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ParamsDictionary</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;asyncHandler(async (req: Request, res: Response, next: NextFunction) &#x3D;&gt; {const id: string &#x3D; req.query.id;try {const lookupResponse: LookupResponse &#x3D; await this.service.getLookup(id);res.send(lookupResponse.toJson());} catch (error) {res.status(500).send(&#x60;Error with ChartsResponse: ${error}&#x60;);}})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L47">src/Controller/ChartsController.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lookuppath" class="tsd-anchor"></a>
+					<h3>lookup<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">lookup<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/lookup&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L10">src/Controller/ChartsController.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +178,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_interfaces_controllerinterface_.controller.html">Controller</a>.<a href="../interfaces/_interfaces_controllerinterface_.controller.html#path">path</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L8">src/Controller/ChartsController.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L9">src/Controller/ChartsController.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,7 +189,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_interfaces_controllerinterface_.controller.html">Controller</a>.<a href="../interfaces/_interfaces_controllerinterface_.controller.html#router">router</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L9">src/Controller/ChartsController.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L11">src/Controller/ChartsController.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,7 +199,7 @@
 					<div class="tsd-signature tsd-kind-icon">service<span class="tsd-signature-symbol">:</span> <a href="_services_itunesservice_.itunesservice.html" class="tsd-signature-type">ITunesService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L10">src/Controller/ChartsController.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L12">src/Controller/ChartsController.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -194,7 +216,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/0ae9849/podapi_ts/src/Controller/ChartsController.ts#L17">src/Controller/ChartsController.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/mboeddeker/podcast_youtube/blob/73fc848/podapi_ts/src/Controller/ChartsController.ts#L19">src/Controller/ChartsController.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -226,6 +248,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_controller_chartscontroller_.chartscontroller.html#getcharts" class="tsd-kind-icon">get<wbr>Charts</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_controller_chartscontroller_.chartscontroller.html#getlookup" class="tsd-kind-icon">get<wbr>Lookup</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_controller_chartscontroller_.chartscontroller.html#lookuppath" class="tsd-kind-icon">lookup<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_controller_chartscontroller_.chartscontroller.html#path" class="tsd-kind-icon">path</a>

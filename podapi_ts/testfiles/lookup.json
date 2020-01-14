@@ -1,0 +1,41 @@
+{
+  "resultCount": 1,
+  "results": [
+    {
+      "wrapperType": "track",
+      "kind": "podcast",
+      "artistId": 974891224,
+      "collectionId": 360084272,
+      "trackId": 360084272,
+      "artistName": "Joe Rogan",
+      "collectionName": "The Joe Rogan Experience",
+      "trackName": "The Joe Rogan Experience",
+      "collectionCensoredName": "The Joe Rogan Experience",
+      "trackCensoredName": "The Joe Rogan Experience",
+      "artistViewUrl": "https://podcasts.apple.com/us/artist/joe-rogan/974891224?uo=4",
+      "collectionViewUrl": "https://podcasts.apple.com/us/podcast/the-joe-rogan-experience/id360084272?uo=4",
+      "feedUrl": "http://joeroganexp.joerogan.libsynpro.com/rss",
+      "trackViewUrl": "https://podcasts.apple.com/us/podcast/the-joe-rogan-experience/id360084272?uo=4",
+      "artworkUrl30": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/12/ab/d6/12abd655-2473-c4fb-7d53-33e1b9e4afdc/mza_6788052308516976968.jpg/30x30bb.jpg",
+      "artworkUrl60": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/12/ab/d6/12abd655-2473-c4fb-7d53-33e1b9e4afdc/mza_6788052308516976968.jpg/60x60bb.jpg",
+      "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/12/ab/d6/12abd655-2473-c4fb-7d53-33e1b9e4afdc/mza_6788052308516976968.jpg/100x100bb.jpg",
+      "collectionPrice": 0.0,
+      "trackPrice": 0.0,
+      "trackRentalPrice": 0,
+      "collectionHdPrice": 0,
+      "trackHdPrice": 0,
+      "trackHdRentalPrice": 0,
+      "releaseDate": "2020-01-14T04:00:00Z",
+      "collectionExplicitness": "explicit",
+      "trackExplicitness": "explicit",
+      "trackCount": 300,
+      "country": "USA",
+      "currency": "USD",
+      "primaryGenreName": "Comedy",
+      "contentAdvisoryRating": "Explicit",
+      "artworkUrl600": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/12/ab/d6/12abd655-2473-c4fb-7d53-33e1b9e4afdc/mza_6788052308516976968.jpg/600x600bb.jpg",
+      "genreIds": ["1303", "26", "1324"],
+      "genres": ["Comedy", "Podcasts", "Society & Culture"]
+    }
+  ]
+}

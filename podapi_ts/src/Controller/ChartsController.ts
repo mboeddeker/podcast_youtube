@@ -2,10 +2,12 @@ import { NextFunction, Request, Response, Router } from "express";
 import asyncHandler from "express-async-handler";
 import Controller from "../Interfaces/ControllerInterface";
 import { ChartResponse } from "../Models/ChartResponse";
+import { LookupResponse } from "../Models/LookupResponse";
 import ITunesService from "../Services/ITunesService";
 
 class ChartsController implements Controller {
   public path: string = "/charts";
+  public lookupPath: string = "/lookup";
   public router: Router = Router();
   private service: ITunesService;
 
@@ -16,6 +18,7 @@ class ChartsController implements Controller {
 
   private initializeController() {
     this.router.get(this.path, this.getCharts);
+    this.router.get(this.path + "/lookup", this.getLookup);
   }
 
   private getCharts = asyncHandler(
@@ -35,6 +38,18 @@ class ChartsController implements Controller {
           withLookup
         );
         res.send(chartsResponse.toJson());
+      } catch (error) {
+        res.status(500).send(`Error with ChartsResponse: ${error}`);
+      }
+    }
+  );
+
+  private getLookup = asyncHandler(
+    async (req: Request, res: Response, next: NextFunction) => {
+      const id: string = req.query.id;
+      try {
+        const lookupResponse: LookupResponse = await this.service.getLookup(id);
+        res.send(lookupResponse.toJson());
       } catch (error) {
         res.status(500).send(`Error with ChartsResponse: ${error}`);
       }

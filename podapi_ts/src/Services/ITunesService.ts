@@ -3,6 +3,8 @@ import { ObjectMapper } from "json-object-mapper";
 import * as request from "request";
 import { ChartResponse } from "../Models/ChartResponse";
 import FeedResponseDTO from "../Models/DTOs/FeedResponseDTO";
+import LookupResponseDTO from "../Models/DTOs/LookupResponseDTO";
+import { LookupResponse } from "../Models/LookupResponse";
 import BaseServie from "./BaseService";
 
 /**
@@ -12,7 +14,7 @@ import BaseServie from "./BaseService";
 class ITunesService extends BaseServie {
   /**
    *
-   * @param langauge Language Code, eg. 'us', 'de' and so on. Default value `'30'`.
+   * @param langauge Language Code, eg. 'us', 'de' and so on. Default value `'de'`.
    * @param limit Limit of entries. Maximum 200, minimum 1. Default value `30`.
    * @param explicit Explicit entries allowed. Default value `true`
    * @param genre Get entries for genre with genre id. Default value `null`.
@@ -49,6 +51,24 @@ class ITunesService extends BaseServie {
         );
 
         return resolve(new ChartResponse(feedResponse));
+      });
+    });
+  }
+
+  public async getLookup(id: string): Promise<LookupResponse> {
+    const url = `${this.baseUrl}lookup?id=${id}`;
+    return new Promise<LookupResponse>((resolve, reject) => {
+      request.get(url, (error, response, body) => {
+        if (error != null || response.statusCode === 400) {
+          return reject(`error: ${error ?? "Status: " + response.statusCode}`);
+        }
+
+        const lookupResponse = ObjectMapper.deserialize(
+          LookupResponseDTO,
+          JSON.parse(body)
+        );
+
+        return resolve(new LookupResponse(lookupResponse));
       });
     });
   }

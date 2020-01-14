@@ -49,7 +49,7 @@
     "dev": "ts-node ./src/Server.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest --coverage",
-    "createdoc": "typedoc --out docs src"
+    "doc": "typedoc --out docs src"
   },
   "keywords": [],
   "author": "",
