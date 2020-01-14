@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1579015699834" clover="3.2.0">
-  <project timestamp="1579015699834" name="All files">
+<coverage generated="1579029079990" clover="3.2.0">
+  <project timestamp="1579029079990" name="All files">
     <metrics statements="92" coveredstatements="92" conditionals="4" coveredconditionals="3" methods="17" coveredmethods="17" elements="113" coveredelements="112" complexity="0" loc="92" ncloc="92" packages="2" files="12" classes="12"/>
     <package name="Models">
       <metrics statements="33" coveredstatements="33" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>
       <file name="ChartItem.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/ChartItem.ts">
         <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="46" count="61" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="45" count="61" type="stmt"/>
+        <line num="49" count="61" type="stmt"/>
         <line num="50" count="61" type="stmt"/>
         <line num="51" count="61" type="stmt"/>
-        <line num="52" count="61" type="stmt"/>
-        <line num="53" count="183" type="stmt"/>
+        <line num="52" count="183" type="stmt"/>
+        <line num="53" count="61" type="stmt"/>
         <line num="54" count="61" type="stmt"/>
-        <line num="55" count="61" type="stmt"/>
-        <line num="57" count="61" type="cond" truecount="2" falsecount="0"/>
-        <line num="58" count="27" type="stmt"/>
-        <line num="59" count="34" type="cond" truecount="1" falsecount="1"/>
-        <line num="60" count="34" type="stmt"/>
+        <line num="56" count="61" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="27" type="stmt"/>
+        <line num="58" count="34" type="cond" truecount="1" falsecount="1"/>
+        <line num="59" count="34" type="stmt"/>
       </file>
       <file name="ChartResponse.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/ChartResponse.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="21" count="60" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="30" count="60" type="stmt"/>
       </file>
       <file name="Model.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/Model.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
