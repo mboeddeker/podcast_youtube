@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1579006267720" clover="3.2.0">
+  <project timestamp="1579006267720" name="All files">
+    <metrics statements="59" coveredstatements="59" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9" elements="68" coveredelements="68" complexity="0" loc="59" ncloc="59" packages="1" files="9" classes="9"/>
+    <file name="AuthorDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/AuthorDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="CategoryDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/CategoryDTO.ts">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="60" type="stmt"/>
+      <line num="8" count="60" type="stmt"/>
+      <line num="11" count="60" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+    </file>
+    <file name="ContentDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/ContentDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="60" type="stmt"/>
+      <line num="8" count="60" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="EntryDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/EntryDTO.ts">
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="14" count="60" type="stmt"/>
+      <line num="17" count="60" type="stmt"/>
+      <line num="20" count="60" type="stmt"/>
+      <line num="23" count="60" type="stmt"/>
+      <line num="26" count="60" type="stmt"/>
+      <line num="29" count="60" type="stmt"/>
+      <line num="32" count="60" type="stmt"/>
+      <line num="35" count="60" type="stmt"/>
+      <line num="38" count="60" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+    </file>
+    <file name="FeedDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/FeedDTO.ts">
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+    </file>
+    <file name="FeedResponseDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/FeedResponseDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="IdDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/IdDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="60" type="stmt"/>
+      <line num="8" count="60" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="ImageDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/ImageDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="180" type="stmt"/>
+      <line num="8" count="180" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="ReleaseDateDTO.ts" path="/Users/marvinknabe/Entwicklung/flutter/podcast_youtube/podapi_ts/src/Models/DTOs/ReleaseDateDTO.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="60" type="stmt"/>
+      <line num="8" count="60" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
