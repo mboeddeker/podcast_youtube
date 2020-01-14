@@ -1,5 +1,9 @@
+import { JsonIgnore, JsonProperty } from "json-object-mapper";
+import StringMap from "../Interfaces/StringMapInterface";
+import ArtistDTO from "./DTOs/ArtistDTO";
+import EntryDTO from "./DTOs/EntryDTO";
 import ILookupItem from "./LookupItem";
-import { JsonProperty, JsonIgnore } from "json-object-mapper";
+import Model from "./Model";
 
 // tslint:disable-next-line:interface-name
 export default interface IChartItem {
@@ -13,25 +17,47 @@ export default interface IChartItem {
   lookup: ILookupItem;
 }
 
-export class ChartItem implements IChartItem {
-  @JsonProperty({ name: "id" })
+export class ChartItem extends Model<EntryDTO> implements IChartItem {
+  @JsonProperty()
   public id: string;
 
-  @JsonProperty({ name: "title" })
+  @JsonProperty()
   public title: string;
 
-  @JsonProperty({ name: "summary" })
+  @JsonProperty()
   public summary: string;
 
-  @JsonProperty({ name: "im:artist" })
+  @JsonProperty()
   public artist: string;
 
-  @JsonProperty({ name: "im:image" })
+  @JsonProperty()
   public thumbnails: string[];
 
-  @JsonProperty({ name: "im:releaseDate" })
+  @JsonProperty()
   public releaseDate: string;
 
+  @JsonProperty()
   public category: string;
+
+  @JsonProperty()
   public lookup: ILookupItem;
+
+  constructor(dto: EntryDTO) {
+    super(dto);
+  }
+
+  public mapFromDTO(dto: EntryDTO): void {
+    this.id = dto.id.id;
+    this.title = dto.title;
+    this.summary = dto.summary;
+    this.thumbnails = dto.image.map(imageDTO => imageDTO.text);
+    this.releaseDate = dto.releaseDate.label;
+    this.category = dto.category.label;
+
+    if (typeof dto.artist === "object") {
+      this.artist = ((dto.artist as unknown) as StringMap)["#text"];
+    } else if (typeof dto.artist === "string") {
+      this.artist = dto.artist as string;
+    }
+  }
 }

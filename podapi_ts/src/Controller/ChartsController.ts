@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
-import * as asyncHandler from "express-async-handler";
+import asyncHandler from "express-async-handler";
 import Controller from "../Interfaces/ControllerInterface";
+import { ChartResponse } from "../Models/ChartResponse";
 import ITunesService from "../Services/ITunesService";
 
 class ChartsController implements Controller {
@@ -19,8 +20,24 @@ class ChartsController implements Controller {
 
   private getCharts = asyncHandler(
     async (req: Request, res: Response, next: NextFunction) => {
-      const obj = await this.service.getTopPodcasts();
-      res.send(obj);
+      const language: string = req.query.language;
+      const limit: number = Number(req.query.limit);
+      const explicit: boolean = Boolean(req.query.explicit);
+      const genre: string = req.query.genre;
+      const withLookup: boolean = Boolean(req.query.withLookup);
+
+      try {
+        const chartsResponse: ChartResponse = await this.service.getTopPodcasts(
+          language,
+          limit,
+          explicit,
+          genre,
+          withLookup
+        );
+        res.send(chartsResponse.toJson());
+      } catch (error) {
+        res.status(500).send(`Error with ChartsResponse: ${error}`);
+      }
     }
   );
 }
