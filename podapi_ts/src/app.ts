@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
-import * as cookieParser from "cookie-parser";
-import * as express from "express";
+import cookieParser from "cookie-parser";
+import express from "express";
+import "reflect-metadata";
 
 import Controller from "./Interfaces/ControllerInterface";
 import errorMiddleware from "./Middleware/ErrorMiddleware";

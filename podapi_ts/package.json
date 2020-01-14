@@ -14,8 +14,12 @@
     "envalid": "^4.1.4",
     "express": "^4.16.4",
     "express-async-handler": "^1.1.4",
+    "fast-xml-parser": "^3.16.0",
+    "json-object-mapper": "^1.6.0",
+    "json-typescript-mapper": "^1.1.3",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "5.7.5",
+    "mongoose": ">=5.7.5",
+    "reflect-metadata": "^0.1.13",
     "request": "^2.88.0"
   },
   "devDependencies": {
@@ -37,13 +41,15 @@
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.16.2",
     "typescript": "^3.2.1"
   },
   "scripts": {
     "watch": "nodemon --config ./nodemon.json",
     "dev": "ts-node ./src/Server.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest"
+    "test": "jest --coverage",
+    "doc": "typedoc --out docs src"
   },
   "keywords": [],
   "author": "",

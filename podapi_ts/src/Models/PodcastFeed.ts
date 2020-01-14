@@ -1,6 +1,7 @@
 import PodcastItem from "./PodcastItem";
 
-export default interface PodcastFeed {
+// tslint:disable-next-line:interface-name
+export default interface IPodcastFeed {
   title: string;
   lastBuild: string;
   description: string;
