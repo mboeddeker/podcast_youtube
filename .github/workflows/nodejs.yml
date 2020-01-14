@@ -19,7 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
+        echo pwd
         cd ./podapi_ts/
+        echo pwd
         npm install
         npm run test
       env:
