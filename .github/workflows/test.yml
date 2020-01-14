@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Change Folder
-        run: cd ./podapi_ts/
+        run: cd ../../podapi_ts/
       - name: Run Jest
         uses: stefanoeb/jest-action@1.0.2
 
