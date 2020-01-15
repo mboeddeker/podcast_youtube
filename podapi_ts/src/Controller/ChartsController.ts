@@ -24,7 +24,7 @@ class ChartsController implements Controller {
   private getCharts = asyncHandler(
     async (req: Request, res: Response, next: NextFunction) => {
       const language: string = req.query.language;
-      const limit: number = Number(req.query.limit);
+      const limit: number = Number(req.query.limit ?? "30");
       const explicit: boolean = Boolean(req.query.explicit);
       const genre: string = req.query.genre;
       const withLookup: boolean = Boolean(req.query.withLookup);

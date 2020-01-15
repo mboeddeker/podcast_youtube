@@ -1,5 +1,5 @@
-import "reflect-metadata";
 import { JsonIgnore, JsonProperty } from "json-object-mapper";
+import "reflect-metadata";
 import AuthorDTO from "./AuthorDTO";
 import EntryDTO from "./EntryDTO";
 
