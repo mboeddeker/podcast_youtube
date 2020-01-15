@@ -5,13 +5,13 @@ import { ChartResponse } from "../Models/ChartResponse";
 import FeedResponseDTO from "../Models/DTOs/FeedResponseDTO";
 import LookupResponseDTO from "../Models/DTOs/LookupResponseDTO";
 import { LookupResponse } from "../Models/LookupResponse";
-import BaseServie from "./BaseService";
+import BaseService from "./BaseService";
 
 /**
  * ### ITunesService
  * Fetching Podcasts and Lookups from the iTunes Api
  */
-class ITunesService extends BaseServie {
+class ITunesService extends BaseService {
   /**
    *
    * @param langauge Language Code, eg. 'us', 'de' and so on. Default value `'de'`.

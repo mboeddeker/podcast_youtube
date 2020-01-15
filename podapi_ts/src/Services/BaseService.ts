@@ -1,5 +1,5 @@
-class BaseServie {
+class BaseService {
   public baseUrl = "https://itunes.apple.com/";
 }
 
-export default BaseServie;
+export default BaseService;
