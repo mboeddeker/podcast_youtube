@@ -17,8 +17,8 @@ RUN npm install pm2 -g
 RUN npm run build
 
 # Copy all other source code to work directory
-COPY ./dist .
+
 
 # Start
-CMD ["pm2-runtime","Server.js"]
+CMD ["pm2-runtime","dist/Server.js"]
 EXPOSE 5000
