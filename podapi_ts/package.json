@@ -49,7 +49,7 @@
   "scripts": {
     "watch": "nodemon --config ./nodemon.json",
     "dev": "ts-node ./src/Server.ts",
-    "build": "tsc",
+    "build": "./node_modules/typescript/bin/tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest --coverage",
     "doc": "typedoc --out docs src"
