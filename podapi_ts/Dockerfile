@@ -7,6 +7,10 @@ COPY package.json .
 # Install all Packages
 RUN npm install
 
+RUN npm install --save bcrypt-nodejs
+
+RUN npm uninstall --save bcrypt
+
 RUN npm install pm2 -g
 
 RUN npm run build
