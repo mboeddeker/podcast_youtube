@@ -4,6 +4,7 @@ WORKDIR /podapi/app
 
 # Only copy the package.json file to work directory
 COPY package.json .
+COPY ./src ./src
 # Install all Packages
 RUN npm install
 
