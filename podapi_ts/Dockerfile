@@ -1,8 +1,7 @@
 FROM node:10
 
 # Only copy the package.json file to work directory
-COPY package.json .
-COPY ./src ./src
+COPY . .
 # Install all Packages
 RUN npm install
 
