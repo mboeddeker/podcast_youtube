@@ -12,12 +12,12 @@ RUN npm uninstall --save bcrypt
 
 RUN npm install pm2 -g
 
-RUN npm run build
+RUN npm install typescript -g
 
-
+RUN tsc
 
 # Copy all other source code to work directory
-RUN echo $(ls -1)
+
 
 # Start
 CMD ["pm2-runtime","./dist/Server.js"]
