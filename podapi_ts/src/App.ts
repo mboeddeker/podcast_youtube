@@ -15,6 +15,7 @@ class App {
     this.initializeMiddleware();
     this.initializeErrorhandling();
     this.initializeControllers(controller);
+    this.initializeStatics();
   }
 
   public listen() {
@@ -41,6 +42,10 @@ class App {
     controllers.forEach(controller => {
       this.app.use("/", controller.router);
     });
+  }
+
+  private initializeStatics() {
+    this.app.use(express.static("static"));
   }
   /*
   private connectToTheDatabase() {

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.8.1/hack.css"
+    />
+    <title>Podcast API</title>
+  </head>
+  <body>
+    <h1>
+      <a
+        id="user-content-podcaast-api"
+        class="anchor"
+        href="#podcast-api"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Podcast API
+    </h1>
+    <h2>
+      <a
+        id="user-content-available-paths"
+        class="anchor"
+        href="#available-paths"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Available Paths
+    </h2>
+    <p>Get top Podcasts: <code>podapi.appgewaltig.de/charts</code></p>
+    <p>
+      Get lookupData for a Podcast:
+      <code>podapi.appgewaltig.de/charts/lookup?id=XXX</code>
+    </p>
+    <p>Get a podcast feed: <code>podapi.appgewaltig.de/feed?id=XXX</code></p>
+    <p>
+      Search for Podcasts:
+      <code>podapi.appgewaltig.de/search?searchTerm=XXX</code>
+    </p>
+    <h2>
+      <a
+        id="user-content-charts"
+        class="anchor"
+        href="#charts"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      ><code>/charts</code>
+    </h2>
+    <h4>
+      <a
+        id="user-content-available-query-parameters"
+        class="anchor"
+        href="#available-query-parameters"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Available query parameters:
+    </h4>
+    <ul>
+      <li>
+        <code>language</code>: language/country codes like <code>de</code>,
+        <code>us</code>, <code>fr</code>
+      </li>
+      <li>
+        <code>limit</code>: default <code>30</code>, up to <code>200</code>
+      </li>
+      <li><code>explicit</code>: default <code>true</code></li>
+      <li><code>genre</code>: no default value. use a genre id number here</li>
+      <li>
+        <code>withLookup</code>: default value false. This adds a lookup for
+        every element. Takes more time to load.
+      </li>
+    </ul>
+    <h4>
+      <a
+        id="user-content-response"
+        class="anchor"
+        href="#response"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Response
+    </h4>
+    <div class="highlight highlight-source-json">
+      <pre>{
+        <span class="pl-s"><span class="pl-pds">"</span>entries<span class="pl-pds">"</span></span>: [
+          {
+            <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>00000<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>summary<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>summary<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>releaseDate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>01.01.1970<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>category<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>category<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artist<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>artist<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>thumbnails<span class="pl-pds">"</span></span>: [
+              <span class="pl-s"><span class="pl-pds">"</span>https://static.values.com/image/55x55bb.png<span class="pl-pds">"</span></span>,
+              <span class="pl-s"><span class="pl-pds">"</span>https://static.values.com/image/60x60bb.png<span class="pl-pds">"</span></span>,
+              <span class="pl-s"><span class="pl-pds">"</span>https://static.values.com/image/170x170bb.png<span class="pl-pds">"</span></span>
+            ]
+          },
+        ]</pre>
+    </div>
+    <h2>
+      <a
+        id="user-content-chartslookup"
+        class="anchor"
+        href="#chartslookup"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      ><code>/charts/lookup</code>
+    </h2>
+    <h4>
+      <a
+        id="user-content-available-query-parameters-1"
+        class="anchor"
+        href="#available-query-parameters-1"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Available query parameters:
+    </h4>
+    <ul>
+      <li><code>id</code>: add the id from the chartsItem</li>
+    </ul>
+    <h4>
+      <a
+        id="user-content-response-1"
+        class="anchor"
+        href="#response-1"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Response
+    </h4>
+    <div class="highlight highlight-source-json">
+      <pre>{
+        <span class="pl-s"><span class="pl-pds">"</span>resultCount<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>results<span class="pl-pds">"</span></span>: [
+          {
+            <span class="pl-s"><span class="pl-pds">"</span>trackId<span class="pl-pds">"</span></span>: <span class="pl-c1">1489481533</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artistName<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>artistname<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>trackName<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>trackname<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>feedUrl<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://feedurl/feed<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artworkUrl100<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://image/100x100bb.jpg<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artworkUrl600<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://image/600x600bb.jpg<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>releaseDate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>2020-01-19T09:00:00Z<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>genres<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>News<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Podcasts<span class="pl-pds">"</span></span>],
+            <span class="pl-s"><span class="pl-pds">"</span>genreIds<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>1489<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>26<span class="pl-pds">"</span></span>]
+          }
+        ]
+      }</pre>
+    </div>
+    <h2>
+      <a id="user-content-feed" class="anchor" href="#feed" aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      ><code>/feed</code>
+    </h2>
+    <h4>
+      <a
+        id="user-content-available-query-parameters-2"
+        class="anchor"
+        href="#available-query-parameters-2"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Available query parameters:
+    </h4>
+    <ul>
+      <li><code>id</code>: add the id from the chartsItem or lookupItem</li>
+    </ul>
+    <h4>
+      <a
+        id="user-content-response-2"
+        class="anchor"
+        href="#response-2"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Response
+    </h4>
+    <div class="highlight highlight-source-json">
+      <pre>{
+        <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>lastBuild<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Sun, 19 Jan 2020 09:00:32 +0000<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>image<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://imageUrl.jpg<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>owner<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>owner<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>items<span class="pl-pds">"</span></span>: [
+          {
+            <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>pubDate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Sun, 19 Jan 2020 09:00:00 +0000<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>link<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://link.com<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>episode<span class="pl-pds">"</span></span>: <span class="pl-c1">1</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>mediaUrl<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://podcasthost.com/episode234234.mp3<span class="pl-pds">"</span></span>
+          },
+          {
+            <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>pubDate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Sun, 19 Jan 2020 09:00:00 +0000<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>link<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://link.com<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>episode<span class="pl-pds">"</span></span>: <span class="pl-c1">2</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>mediaUrl<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://podcasthost.com/episode234234.mp3<span class="pl-pds">"</span></span>
+          }
+        ]
+      }</pre>
+    </div>
+    <h2>
+      <a
+        id="user-content-search"
+        class="anchor"
+        href="#search"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      ><code>/search</code>
+    </h2>
+    <h4>
+      <a
+        id="user-content-available-query-parameters-3"
+        class="anchor"
+        href="#available-query-parameters-3"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Available query parameters:
+    </h4>
+    <ul>
+      <li><code>searchTerm</code>: search terms like <code>crime</code></li>
+      <li>
+        <code>country</code>: language/country codes like <code>de</code>,
+        <code>us</code>, <code>fr</code>
+      </li>
+      <li><code>explicit</code>: default value <code>true</code></li>
+    </ul>
+    <h4>
+      <a
+        id="user-content-response-3"
+        class="anchor"
+        href="#response-3"
+        aria-hidden="true"
+        ><span aria-hidden="true" class="octicon octicon-link"></span></a
+      >Response
+    </h4>
+    <div class="highlight highlight-source-json">
+      <pre>{
+        <span class="pl-s"><span class="pl-pds">"</span>resultCount<span class="pl-pds">"</span></span>: <span class="pl-c1">17</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>results<span class="pl-pds">"</span></span>: [
+          {
+            <span class="pl-s"><span class="pl-pds">"</span>trackId<span class="pl-pds">"</span></span>: <span class="pl-c1">1489481533</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artistName<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>artistname<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>trackName<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>trackname<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>feedUrl<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://feedurl/feed<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artworkUrl100<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://image/100x100bb.jpg<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>artworkUrl600<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://image/600x600bb.jpg<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>releaseDate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>2020-01-19T09:00:00Z<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>genres<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>News<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Podcasts<span class="pl-pds">"</span></span>],
+            <span class="pl-s"><span class="pl-pds">"</span>genreIds<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>1489<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>26<span class="pl-pds">"</span></span>]
+          },
+          <span class="pl-ii">...</span>
+        ]
+      }</pre>
+    </div>
+  </body>
+</html>
