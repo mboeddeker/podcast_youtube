@@ -17,8 +17,8 @@ RUN npm run build
 
 
 # Copy all other source code to work directory
-
+RUN echo $(ls -1)
 
 # Start
-CMD ["ls", "&&","pm2-runtime","./dist/Server.js"]
+CMD ["pm2-runtime","./dist/Server.js"]
 EXPOSE 5000
