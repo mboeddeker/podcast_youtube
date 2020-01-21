@@ -1,7 +1,5 @@
 FROM node:10
 
-WORKDIR /podapi/app
-
 # Only copy the package.json file to work directory
 COPY package.json .
 COPY ./src ./src
