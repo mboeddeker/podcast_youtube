@@ -1,15 +1,11 @@
 version: "3"
-networks:
-  api_server_default:
-    external: true
+
 services:
-  podcast_api:
-    networks:
-      - api_server_default
-    build:
-      context: .
-      dockerfile: Dockerfile
+  app:
+    container_name: podapi
+    restart: always
+    build: .
     environment:
-      ENV_NAME: dev
+      - PORT=5000
     ports:
-      - 5000:5000
+      - "5000:5000"

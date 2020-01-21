@@ -7,11 +7,13 @@ COPY package.json .
 # Install all Packages
 RUN npm install
 
+RUN npm install pm2 -g
+
+RUN npm run build
+
 # Copy all other source code to work directory
-ADD . /podapi/app
-# TypeScript
-RUN ./node_modules/.bin/tsc
+COPY ./dist .
 
 # Start
-CMD [ "node", "dist/Server.js" ]
+CMD ["pm2-runtime","Server.js"]
 EXPOSE 5000
