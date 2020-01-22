@@ -1,0 +1,46 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+servers:
+  - url: https://api.server.test/v1
+
+components:
+  schemas:
+    name:
+      type: object
+      properties:
+        property:
+          type: integer
+
+  responses:
+    ChartResponse:
+      description: asd
+      content:
+        application/json:
+          schema:
+            type: string
+
+  parameters:
+    name:
+      name: name
+      in: query
+      required: true
+      description: dadklasl
+      schema:
+        type: string
+
+paths:
+  /charts:
+    get:
+      parameters:
+        - in: query
+          name: language
+          schema:
+            type: string
+            default: de
+          description: The language or country code for the charts.
+
+      responses:
+        "200":
+          $ref: "#/components/responses/ChartResponse"

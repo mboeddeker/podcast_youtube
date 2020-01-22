@@ -47,7 +47,7 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "watch": "nodemon --config ./nodemon.json",
+    "x": "nodemon --config ./nodemon.json",
     "dev": "ts-node ./src/Server.ts",
     "build": "./node_modules/typescript/bin/tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
