@@ -17,5 +17,6 @@ public final class GeneratedPluginRegistrant {
       bz.rxla.audioplayer.AudioplayerPlugin.registerWith(shimPluginRegistry.registrarFor("bz.rxla.audioplayer.AudioplayerPlugin"));
     flutterEngine.getPlugins().add(new io.flutter.plugins.packageinfo.PackageInfoPlugin());
     flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
   }
 }

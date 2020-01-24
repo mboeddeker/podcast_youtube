@@ -1,10 +1,15 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kiwi/kiwi.dart';
-
+import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 
 class InjectionContainer {
-  void setup() {
+  static void setup() {
     final container = Container();
+    // App Router
+    container.registerSingleton((c) => Router());
+    // Shared Preferences
+    container.registerInstance(AppSharedPreferences());
   }
 }
 
