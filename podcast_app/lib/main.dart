@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 import 'package:podcast_app/di/injection_container.dart';
 import 'package:podcast_app/pages/app_loading_page/app_loading_page.dart';
+import 'package:podcast_app/pages/intro_slider/views/intro_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,9 +37,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
-            return Container(
-              child: Center(child: Text('${snapshot.data}')),
-            );
+            return IntroPage();
           default:
             return AppLoadingPage();
         }
