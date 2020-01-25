@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:podcast_app/core/utils/generic_state.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 
 abstract class Input {
   onPageChanged(int index);
+
+  onIntroFinished();
 }
 
 abstract class Output {
@@ -34,6 +35,11 @@ class IntroPageViewModel implements Input, Output {
   }
 
   @override
+  onIntroFinished() {
+    print('on intro finished');
+  }
+
+  @override
   bool pageSnappingAllowed() => true;
 
   @override
@@ -55,7 +61,7 @@ class IntroPageViewModel implements Input, Output {
   // TODO: Add translation files.
   @override
   List<String> sliderTitles() => [
-        'Enjoy your daily dose \nof podcasts',
+        'Enjoy your daily dose of podcasts',
         'Download your favorites and listen to them offline',
         'And if you like us, rate this app on the app stores',
       ];
