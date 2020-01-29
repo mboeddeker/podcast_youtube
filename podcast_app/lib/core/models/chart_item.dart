@@ -11,22 +11,25 @@ class ChartItem extends Equatable {
   final String artist;
   final List<String> thumbnails;
 
-  ChartItem(
-      {@required this.id,
-      @required this.title,
-      @required this.summary,
-      @required this.releaseDate,
-      @required this.category,
-      @required this.artist,
-      @required this.thumbnails});
+  ChartItem({
+    @required this.id,
+    @required this.title,
+    @required this.summary,
+    @required this.releaseDate,
+    @required this.category,
+    @required this.artist,
+    @required this.thumbnails,
+  });
 
-  static ChartItem fromMap(Map<String, dynamic> map) {
+  static ChartItem fromJson(Map<String, dynamic> map) {
     return ChartItem(
       id: map['id'],
       title: map['title'],
       summary: map['summary'],
       releaseDate: DateUtils.dateFromString(
-          dateString: map['releaseDate'], formatter: DateUtils.defaultFormat),
+        dateString: map['releaseDate'],
+        formatter: DateUtils.defaultFormat,
+      ),
       category: map['category'],
       artist: map['artist'],
       thumbnails: map['thumbnails'].toList(),

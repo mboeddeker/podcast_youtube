@@ -52,7 +52,8 @@ class _IntroPageState extends State<IntroPage> {
                           children: <Widget>[
                             ParallaxContainer(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 24, right: 24, top: 50),
+                                padding: const EdgeInsets.only(
+                                    left: 24, right: 24, top: 50),
                                 child: Text(
                                   viewModel.sliderTitles()[currentIndex.value],
                                   style: AppTextStyles.heading1,
@@ -65,9 +66,11 @@ class _IntroPageState extends State<IntroPage> {
                             SizedBox(height: 32),
                             ParallaxContainer(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 24, right: 24),
+                                padding:
+                                    const EdgeInsets.only(left: 24, right: 24),
                                 child: Text(
-                                  viewModel.sliderSubTitles()[currentIndex.value],
+                                  viewModel
+                                      .sliderSubTitles()[currentIndex.value],
                                   style: AppTextStyles.heading2,
                                 ),
                               ),
@@ -79,7 +82,8 @@ class _IntroPageState extends State<IntroPage> {
                             ParallaxContainer(
                               child: Container(
                                 alignment: Alignment.centerRight,
-                                height: MediaQuery.of(context).size.height / 2.3,
+                                height:
+                                    MediaQuery.of(context).size.height / 2.3,
                                 child: Image.asset(
                                   viewModel.sliderImages()[currentIndex.value],
                                   fit: BoxFit.contain,
@@ -94,15 +98,18 @@ class _IntroPageState extends State<IntroPage> {
                                 ? //TODO: this a single Widget
                                 ParallaxContainer(
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: <Widget>[
                                         MaterialButton(
                                           height: 50,
                                           minWidth: 150,
-                                          onPressed: () => viewModel.onIntroFinished(),
+                                          onPressed: () =>
+                                              viewModel.onIntroFinished(),
                                           child: Text('OKAY'),
                                           shape: RoundedRectangleBorder(
-                                            borderRadius: new BorderRadius.circular(25.0),
+                                            borderRadius:
+                                                new BorderRadius.circular(25.0),
                                           ),
                                           color: Colors.blue,
                                           textColor: Colors.white,
