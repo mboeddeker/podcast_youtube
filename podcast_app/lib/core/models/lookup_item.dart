@@ -33,8 +33,8 @@ class LookupItem extends Equatable {
       artwork100: map['artwork100'],
       artwork600: map['artwork600'],
       releaseDate: map['releaseDate'],
-      genres: map['genres'].toList(),
-      genreIds: map['genreIds'].toList(),
+      genres: map['genres'].map<String>((i) => i.toString()).toList(),
+      genreIds: map['genreIds'].map<String>((i) => i.toString()).toList(),
     );
   }
 

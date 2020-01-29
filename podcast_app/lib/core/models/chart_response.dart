@@ -11,8 +11,9 @@ class ChartResponse extends Equatable {
 
   static ChartResponse fromJson(Map<String, dynamic> map) {
     return ChartResponse(
-        entries:
-            map['entries'].map((entry) => ChartItem.fromJson(entry)).toList());
+        entries: map['entries']
+            .map<ChartItem>((entry) => ChartItem.fromJson(entry))
+            .toList());
   }
 
   @override

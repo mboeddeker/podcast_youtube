@@ -32,7 +32,7 @@ class ChartItem extends Equatable {
       ),
       category: map['category'],
       artist: map['artist'],
-      thumbnails: map['thumbnails'].toList(),
+      thumbnails: map['thumbnails'].map<String>((i) => i.toString()).toList(),
     );
   }
 
