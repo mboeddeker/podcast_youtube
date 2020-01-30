@@ -1,17 +1,68 @@
+import 'package:flutter/foundation.dart';
 import 'package:podcast_app/core/models/chart_response.dart';
+import 'package:podcast_app/core/models/feed.dart';
+import 'package:podcast_app/core/models/lookup_response.dart';
+import 'package:podcast_app/core/models/result.dart';
+import 'package:podcast_app/core/services/api_options.dart';
 import 'package:podcast_app/core/services/base_service.dart';
-import 'package:podcast_app/di/injection_container.dart';
 
 class PodApiService {
   BaseService service;
 
-  PodApiService({BaseService service}) {
-    this.service = service ??= inject<BaseService>();
+  PodApiService({this.service});
+
+  Future<Result<ChartResponse>> getCharts(
+      {@required ChartOptions options}) async {
+    final url = '${service.baseUrl}${options.getQueryPath()}';
+    try {
+      final response = await service.dio.get(url);
+      return Result.success(
+        data: ChartResponse.fromJson(response.data),
+        message: 'Success',
+      );
+    } catch (e) {
+      return Result.error(message: e.toString());
+    }
   }
 
-  Future<ChartResponse> getCharts() async {
-    final url = '${service.baseUrl}/charts';
-    final response = await service.dio.get(url);
-    return ChartResponse.fromJson(response.data);
+  Future<Result<LookupResponse>> getLookup(
+      {@required LookupOptions options}) async {
+    final url = '${service.baseUrl}${options.getQueryPath()}';
+    try {
+      final response = await service.dio.get(url);
+      return Result.success(
+        data: LookupResponse.fromJson(response.data),
+        message: 'Success',
+      );
+    } catch (e) {
+      return Result.error(message: e.toString());
+    }
+  }
+
+  Future<Result<LookupResponse>> search(
+      {@required SearchOptions options}) async {
+    final url = '${service.baseUrl}${options.getQueryPath()}';
+    try {
+      final response = await service.dio.get(url);
+      return Result.success(
+        data: LookupResponse.fromJson(response.data),
+        message: 'Success',
+      );
+    } catch (e) {
+      return Result.error(message: e.toString());
+    }
+  }
+
+  Future<Result<Feed>> getFeed({@required FeedOptions options}) async {
+    final url = '${service.baseUrl}${options.getQueryPath()}';
+    try {
+      final response = await service.dio.get(url);
+      return Result.success(
+        data: Feed.fromJson(response.data),
+        message: 'Success',
+      );
+    } catch (e) {
+      return Result.error(message: e.toString());
+    }
   }
 }

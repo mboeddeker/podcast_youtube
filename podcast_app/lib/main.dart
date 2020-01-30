@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:podcast_app/core/services/api_options.dart';
 import 'package:podcast_app/core/services/podapi_service.dart';
 import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 import 'package:podcast_app/di/injection_container.dart';
 import 'package:podcast_app/pages/app_loading_page/app_loading_page.dart';
 import 'package:podcast_app/pages/intro_slider/intro_page.dart';
+import 'package:podcast_app/pages/main_page/main_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,9 +41,9 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
-            return IntroPage();
+            return MainPage();
           default:
-            return AppLoadingPage();
+            return MainPage();
         }
       },
     );

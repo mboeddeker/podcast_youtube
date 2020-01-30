@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kiwi/kiwi.dart';
 import 'package:podcast_app/core/services/base_service.dart';
+import 'package:podcast_app/core/services/podapi_service.dart';
 import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 
 class InjectionContainer {
@@ -13,6 +14,8 @@ class InjectionContainer {
     container.registerInstance(AppSharedPreferences());
     // BaseService
     container.registerInstance(BaseService());
+    // PodApi Service
+    container.registerInstance(PodApiService(service: inject<BaseService>()));
   }
 }
 

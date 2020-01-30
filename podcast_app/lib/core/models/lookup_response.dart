@@ -10,7 +10,7 @@ class LookupResponse extends Equatable {
 
   LookupResponse({@required this.resultCount, @required this.results});
 
-  LookupResponse fromJson(Map<String, dynamic> map) {
+  static LookupResponse fromJson(Map<String, dynamic> map) {
     return LookupResponse(
       resultCount: map['resultCount'],
       results: map['results'].map((item) => LookupItem.fromJson(item)).toList(),
