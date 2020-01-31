@@ -14,7 +14,10 @@ class DashboardPage extends StatelessWidget {
             color: Colors.black26,
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return IntroPage();
+                return Scaffold(
+                  appBar: AppBar(title: Text('data1')),
+                  body: Container(),
+                );
               }));
             },
             child: Text('push'),
