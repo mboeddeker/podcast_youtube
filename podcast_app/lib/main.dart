@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 import 'package:podcast_app/di/injection_container.dart';
+import 'package:podcast_app/pages/app_loading_page/app_loading_page.dart';
+import 'package:podcast_app/pages/intro_slider/intro_page.dart';
 import 'package:podcast_app/pages/main_page/main_page.dart';
 
 void main() async {
@@ -37,9 +39,13 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
+            if (snapshot.data == true) {
+              return IntroPage();
+            }
             return MainPage();
           default:
-            return MainPage();
+            //TODO: load a loading Page
+            return AppLoadingPage();
         }
       },
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:podcast_app/pages/intro_slider/intro_page.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
