@@ -13,37 +13,40 @@ class MainPage extends StatelessWidget {
       create: (_) => inject<MainPageViewModel>(),
       child: Consumer<MainPageViewModel>(
         builder: (context, viewModel, _) {
-          return Material(
-            child: SlidingUpPanel(
-              backdropEnabled: true,
-              backdropOpacity: 1.0,
-              panel: Center(
-                child: Text("This is the sliding Widget"),
-              ),
-              collapsed: Container(
-                decoration: BoxDecoration(
-                  borderRadius: viewModel.panelRadius,
-                  color: Colors.blueGrey,
-                ),
-                child: Center(
-                  child: Text(
-                    "This is the collapsed Widget",
-                    style: TextStyle(color: Colors.white),
+          return Scaffold(
+            body: Material(
+              child: SlidingUpPanel(
+                backdropEnabled: true,
+                minHeight: 75,
+                backdropOpacity: 1.0,
+                maxHeight: MediaQuery.of(context).size.height - 75,
+                panel: Container(
+                    child: Center(
+                  child: Text("This is the sliding Widget"),
+                )),
+                collapsed: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: viewModel.panelRadius,
                   ),
                 ),
+                body: MaterialApp(
+                  title: 'Podcast Appa',
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeData(
+                      primarySwatch: Colors.blue,
+                      textTheme: GoogleFonts.robotoTextTheme(
+                        Theme.of(context).textTheme,
+                      )),
+                  home: DashboardPage(),
+                ),
+                borderRadius: viewModel.panelRadius,
               ),
-              body: MaterialApp(
-                title: 'Podcast Appa',
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData(
-                    primarySwatch: Colors.blue,
-                    textTheme: GoogleFonts.robotoTextTheme(
-                      Theme.of(context).textTheme,
-                    )),
-                home: DashboardPage(),
-              ),
-              borderRadius: viewModel.panelRadius,
             ),
+            bottomNavigationBar: BottomNavigationBar(items: [
+              BottomNavigationBarItem(icon: Icon(Icons.ac_unit), title: Text('home')),
+              BottomNavigationBarItem(icon: Icon(Icons.ac_unit), title: Text('home')),
+              BottomNavigationBarItem(icon: Icon(Icons.ac_unit), title: Text('home'))
+            ]),
           );
         },
       ),
