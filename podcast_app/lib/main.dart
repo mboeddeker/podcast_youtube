@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.blue,
-            textTheme: GoogleFonts.robotoTextTheme(
+            textTheme: GoogleFonts.openSansTextTheme(
               Theme.of(context).textTheme,
             )),
         home: loadMainScreen());

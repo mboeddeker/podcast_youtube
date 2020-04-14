@@ -5,6 +5,7 @@ import 'package:podcast_app/core/services/base_service.dart';
 import 'package:podcast_app/core/services/podapi_service.dart';
 import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 import 'package:podcast_app/pages/main_page/main_page_viewModel.dart';
+import 'package:podcast_app/states/app_state.dart';
 
 class InjectionContainer {
   static void setup() {
@@ -21,6 +22,9 @@ class InjectionContainer {
     // VIEWMODELS
     // MainPageViewModel
     container.registerSingleton((c) => MainPageViewModel());
+
+    // AppState
+    container.registerSingleton((c) => AppState());
   }
 }
 
