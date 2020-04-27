@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:podcast_app/components/charts_row/charts_row.dart';
+import 'package:podcast_app/core/utils/genres.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -27,10 +28,12 @@ class DashboardPage extends StatelessWidget {
         elevation: 0.0,
       ),
       body: Container(
+        padding: EdgeInsets.only(left: 8),
         color: Colors.white,
         child: ListView(children: [
+          SizedBox(height: 16),
           ChartRow(
-            title: "Top Podcasts",
+            genre: Genre.books,
           )
         ]),
       ),

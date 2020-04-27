@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:podcast_app/components/charts_row/chart_card.dart';
 import 'package:podcast_app/components/charts_row/charts_row_viewmodel.dart';
+import 'package:podcast_app/core/utils/genres.dart';
 
 class ChartRow extends StatelessWidget {
-  final String title;
-  ChartRow({this.title});
+  String genre;
+  ChartRow({this.genre});
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = ChartsRowViewModel();
-    viewModel.rowTitle = this.title;
+    final viewModel = ChartsRowViewModel(genre);
     return FutureBuilder<bool>(
       future: viewModel.loadItems(),
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {

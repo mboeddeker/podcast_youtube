@@ -28,4 +28,6 @@ class Genre {
     Genre.technologie,
     Genre.techNews,
   ];
+
+  static String genreName(String genre) {}
 }
