@@ -1,10 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:podcast_app/core/utils/app_shared_preferences.dart';
 import 'package:podcast_app/core/utils/generic_state.dart';
+import 'package:podcast_app/di/injection_container.dart';
+import 'package:podcast_app/pages/main_page/main_page.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 
 abstract class Input {
   onPageChanged(int index);
 
-  onIntroFinished();
+  onIntroFinished(BuildContext context);
 }
 
 abstract class Output {
@@ -28,6 +32,8 @@ class IntroPageViewModel implements Input, Output {
 
   GenericState<int> _currentIndex = GenericState<int>.initWith(0);
 
+  final _sharedPrefs = inject<AppSharedPreferences>();
+
   @override
   onPageChanged(int index) {
     _currentIndex.value = index;
@@ -35,8 +41,11 @@ class IntroPageViewModel implements Input, Output {
   }
 
   @override
-  onIntroFinished() {
-    print('on intro finished');
+  onIntroFinished(BuildContext context) {
+    _sharedPrefs
+        .setBool(AppSharedPreferences.COREDATA_FTU_KEY, false)
+        .then((value) => _navigateToMainPage(context))
+        .catchError((error) => _showErrorDialog(context));
   }
 
   @override
@@ -70,4 +79,19 @@ class IntroPageViewModel implements Input, Output {
   @override
   List<String> sliderSubTitles() =>
       ['Search for the next big top podcasts for every genre.', '', ''];
+
+  void _navigateToMainPage(BuildContext context) {
+    final route = MaterialPageRoute(builder: (BuildContext context) => MainPage());
+    Navigator.push(context, route);
+  }
+
+  void _showErrorDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Leider ist ein Fehler aufgetreten.'),
+          );
+        });
+  }
 }

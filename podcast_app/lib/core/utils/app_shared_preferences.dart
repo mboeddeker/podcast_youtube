@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppSharedPreferences {
+  /// Indicates if the user is a first time user. `true` at first start
   static const String COREDATA_FTU_KEY = 'coredata.firsttimeuser.key';
 
   Future<T> get<T>(String key) async => (await SharedPreferences.getInstance()).get(key);

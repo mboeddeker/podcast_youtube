@@ -7,7 +7,9 @@ class AppLoadingPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         child: Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            backgroundColor: Colors.black87,
+          ),
         ),
       ),
     );
