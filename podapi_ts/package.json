@@ -12,7 +12,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.2.0",
     "envalid": "^4.1.4",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-async-handler": "^1.1.4",
     "fast-xml-parser": "^3.16.0",
     "json-object-mapper": "^1.6.0",
